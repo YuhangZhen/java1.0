@@ -1,0 +1,44 @@
+package Test.java;
+import java.util.Scanner;
+
+public class test {
+
+	public  static void OP(String [] array){
+		for(int j=0;j<array.length;j++) {
+			System.out.print(array[j]+"   ");
+		}
+		//输出数组；
+	}
+	   public static void main(String[] args) {
+	        Scanner in=new Scanner(System.in);
+	        String [] sr= new String[5];
+	        //定义数组；
+	        boolean b=true;
+	        //开始循环，不断获得用户输入
+	        while (b) {
+	            for(int i=0;i<5;i++) {
+		            //根据数组长度开始循环；
+		            String s1=in.nextLine();
+		            if(s1.equals("end")) {
+		            	OP(sr);
+		            	//end,结束循环；
+		            	b=false;
+		            }
+		            else {
+			            sr[i]=s1;
+		                System.out.println(i + sr[i]);
+		                //防止超过数组长度；
+			            if(i==4) {
+			            	OP(sr);
+			            	b=false;
+			            	in.close();
+			            }
+		            }
+	            }
+
+	        }
+	        
+	    }
+}
+
+
